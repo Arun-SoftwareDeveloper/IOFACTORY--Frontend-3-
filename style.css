@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Set a background color */
+  overflow: scroll;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.image-container img {
+  width: 300px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  margin: 0 10px;
+  transition: transform 0.3s;
+  border-radius: 10px;
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+}
+
+.image-container .center-image {
+  width: 300px; /* Adjust the width of the center image */
+  height: 350px; /* Adjust the height of the center image */
+}
+
+.image-container .image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 20px; /* Increase padding for better readability */
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.image-container img:hover + .image-overlay {
+  opacity: 1;
+}
+
+/* Add some spacing and styling for the overlay content */
+.image-overlay h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.image-overlay p {
+  margin: 0;
+  font-style: italic;
+}
